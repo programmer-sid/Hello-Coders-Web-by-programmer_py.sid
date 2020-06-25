@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downlaods|programmer.py</title>
+</head>
+<body>
+    <style>
+        .nav-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #3fb5c1;
+            border: 1px solid #3fb5c1;
+            border-radius: 100px;
+            box-shadow: 0 0 15px black;   
+        }
+        
+        .main {
+            text-decoration: none;
+            marker-start: none;
+            list-style: none;
+            border: 3px solid #387288;
+            padding: 10px;
+            font-family: Impact;
+            color: #387288;
+            background-color: #6eced8;
+            border-radius: 13px;
+            
+        }
+        .main:hover{
+            background-color: #387288;
+            color: #6eced8;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            text-decoration: none;
+        }
+        li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        li::marker{
+            padding-left: 50px;
+            padding-right: 100px;
+        }
+        body {
+            background-image: url('https://blog-www.pods.com/wp-content/uploads/2019/04/MG_1_1_New_York_City-1.jpg');
+            background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;        }
+        .download-blog {
+            width: 1213px;
+    border: 2px solid #387288;
+    border-radius: 92px;
+    background: #3fb5c1;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 173px;
+    box-shadow: 4px 2px 7px black
+        }
+        .main-download-box {
+            display: flex;
+            align-items: center;
+        }
+        .des-download{
+            margin: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color:  #387288;
+    padding: 12px;
+    border-radius: 42px;
+    margin-top: 0px;
+        }
+        .title {
+            padding: 43px;
+    padding-bottom: 12px;
+    padding-top: 26px;
+    font-size: 40px;
+    font-family: Impact;
+    color: #387288;
+}
+.title:hover{
+    font-size: 45px;
+}
+        
+        .link {
+            padding-bottom: 12px;
+    padding-top: 9px;
+    width: 176px;
+    padding: 11px;
+    margin: 8px;
+    border-radius: 47px;
+    border: 1px solid rgb(62, 79, 86);
+    background-color: rgb(56, 114, 136);
+    padding-top: 12px;
+    height: 22px;
+    margin-top: 25px;
+}
+.link:hover{
+    cursor: pointer;
+    border-color: white;
+    background-color: rgb(70, 153, 179);
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: consolas;
+}
+.z {
+    display: flex;
+}
+        
+
+    </style>
+    <nav class="nav-bar">
+        <ul class="components">
+            <li><a class="main" href="http://127.0.0.1:8000/">Home</a></li>
+            <li><a class="main" href="/about">About</a></li>
+            <li><a class="main" href="/ProgrammingCourses">Programming courses</a></li>
+            <li><a class="main" href="/contact">Contact Us</a></li>
+            <li><a class="main" href="/yourblog"> + Create </a></li>
+        </ul>
+    </nav>
+    <div class="main-download-box">
+        <div class="row">
+            {% for download in downloads %}
+        <div class="download-blog">       
+            <div class="z">
+                <div class="title">
+                    || {{ download.name }}
+                </div>
+                <div class="link">
+                    <a href="{{ download.link }}" class="link2">Download Source Code</a>
+                </div>
+            </div>
+            <div class="des-download">
+                {{ download.description }}
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>
+

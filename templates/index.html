@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddique Khan's Blog</title>
+</head>
+<body>
+    <style>
+        a {
+            text-decoration: none;
+            marker-start: none;
+            list-style: none;
+            border: 3px solid #387288;
+            padding: 10px;
+            font-family: Impact;
+            color: #387288;
+            background-color: #6eced8;
+            border-radius: 13px;
+            
+        }
+        a:hover{
+            background-color: #387288;
+            color: #6eced8;
+        }
+        .nav-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #3fb5c1;
+            border: 1px solid #3fb5c1;
+            border-radius: 100px;
+            box-shadow: 0 0 15px black;           
+       }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        li::marker{
+            padding-left: 50px;
+            padding-right: 100px;
+        }
+        body {
+            background-image: url("https://wallup.net/wp-content/uploads/2017/11/22/407971-programming-PHP-programming_language-syntax_highlighting-minified-knowledge-coding-code-HTML-color_codes-CSS-computer-pixels-Computer_screen-logic-JavaScript-748x499.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+        }
+        .hello {
+            color: #165269;
+            font-family: consolas;
+            font-size: 48px;
+            padding: -17px;
+            margin: 5px;
+            padding-left: 118px;
+            padding-right: 93px;
+        }
+        .hello:hover{
+            font-size: 60px;
+        }
+        .nav-box{
+            align-items: center;
+            width: 34cm;
+            margin-left: 26px;
+            padding-bottom: 40px;
+        }   
+        
+        .sub-head{
+            color: #bff1f7;
+            padding-top: 15px;  
+            font-variant: all-petite-caps;
+            border: 3px solid;
+            width: 45%;
+            height: 56px;
+            padding-left: 20px;
+            border-radius: 25px;
+            background-color: #3fb5c1
+        } 
+        .box-blog {
+            width: 740px;
+            border: 2px solid grey;
+            border-radius: 8px;
+            background: #3fb5c1;
+            margin: 50px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 5px 14px black;
+        }
+
+
+        .blog-small {
+            height: 60px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            border: 2px solid beige;
+            border-radius: 18px;
+        }
+        .blog-small:hover{
+            height: 80px;
+        }
+        .des-blog{
+            margin: 20px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            color:#bcf3f9;
+            border: 1px solid whitesmoke;
+            padding: 12px;
+        }
+        .des-blog:hover{
+            font-size: 25px;
+        }
+        .date-blog{
+            margin-left: 30px;
+            color: aliceblue;
+            font-size: 12px;
+            font-family: consolas;
+            width: 80px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        .main-blog-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <div class="nav-box">
+        <nav class="nav-bar">
+            <h1 class="hello">|| HELLO CODERS ||</h1>
+            <ul class="components">
+                <li><a href="/about">About</a></li>
+                <li><a href="/downloads">Downloads</a></li>
+                <li><a href="/ProgrammingCourses">Programming courses</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/yourblog"> + Create </a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 class="sub-head">|| Welcome To Programmer_py.sid's Blog</h1>
+    <div class="main-blog-box">
+        <div class="row">
+            {% for blog in blogs %}
+        <div class="box-blog">    
+            <div class="date-blog">
+                {{ blog.date }}
+            </div>
+            <div class="image-blog">
+                <img src="{{ blog.image_url }}" alt="" class="blog-small">
+            </div>    
+            <div class="des-blog">
+                {{ blog.description }}
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+</body>
+</html> 

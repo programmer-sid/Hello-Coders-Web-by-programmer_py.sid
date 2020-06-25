@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Courses</title>
+</head>
+<body>
+    <style>
+        .main {
+            text-decoration: none;
+            marker-start: none;
+            list-style: none;
+            border: 3px solid #387288;
+            padding: 10px;
+            font-family: Impact;
+            color: #387288;
+            background-color: #6eced8;
+            border-radius: 13px;
+            
+        }
+        .main:hover{
+            background-color: #387288;
+            color: #6eced8;
+        }
+        .nav-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #3fb5c1;
+            border: 1px solid #3fb5c1;
+            border-radius: 100px;
+            box-shadow: 0 0 15px black;   
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        li::marker{
+            padding-left: 50px;
+            padding-right: 100px;
+        }
+        body {
+            background-image: url('https://worldstrides.com/wp-content/uploads/2015/07/iStock_000040849990_Large.jpg');
+            background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+        }
+        .main-box {
+            margin: 50px;
+    padding: 35px;
+    border: 1px solid #387288;
+    border-left: none;
+    border-right: none;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-width: 10px;
+    background-color: #6eced8;
+    box-shadow: 0 0 15px black;  
+        }
+        .logo-main {
+            width: 80px;
+    border: 2px solid #628077;
+    border-radius: 57px;
+}
+        
+        .name {
+            margin: 18px;
+    font-size: 55px;
+    margin-left: 65px;
+    font-family: consolas;
+    color: #387288;
+}
+        
+        .language-type {
+            margin: 35px;
+    padding: 10px;
+    font-size: 25px;
+    font-family: cursive;
+    border: 3px solid #ffa07a;
+    background: wheat;
+    border-radius: 50px;
+    margin-top: 22px;
+    color: darksalmon;
+        }
+
+        .link-main {
+            text-decoration: none;
+    padding: 15px;
+    border: solid #387288;
+    background-color: #387288;
+    border-radius: 70px;
+    color: #6eced8;
+    font-family: arial;
+        }
+        .link-main:hover {
+            background-color: #3c5049;
+        }
+        .desi{
+            margin-top: 40px;
+    font-size: 22px;
+    color: #387288;
+        }
+        .upper {
+            display: flex;
+        }
+    </style>
+    <nav class="nav-bar">
+        <ul class="components">
+            <li><a class="main" href="http://127.0.0.1:8000/">Home</a></li>
+            <li><a class="main" href="/downloads">Downloads</a></li>
+            <li><a class="main" href="/about">About Me</a></li>
+            <li><a class="main" href="/contact">Contact Us</a></li>
+            <li><a class="main"href="/yourblog"> + Create </a></li>
+        </ul>
+    </nav>
+    {% for course in courses %}
+    <div class="main-box">
+        <div class="upper">
+            <div class="logo">
+                <img src="{{ course.logo_of_channel }}" alt="logo of {{ course.name_of_channel }}" class="logo-main">
+            </div>
+            <div class="name">
+                {{ course.name_of_channel }}
+            </div>
+            <div class="language-type">
+                {{ course.for_which_language }}
+            </div>
+        </div>
+        <div class="link-channel">
+            <a class = 'link-main' href="{{ course.link_of_channel }}">Go To Youtube Channel</a>
+        </div>
+        <div class="des">
+            <p class="desi">{{ course.des_of_channel }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
+
+
+
+

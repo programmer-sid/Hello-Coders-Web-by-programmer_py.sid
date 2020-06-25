@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Your Blog</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/united-states/newyork/newyork_NationalGeographic_2328428.adapt.1900.1.jpg');
+            background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+         }
+         .nav-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #3fb5c1;
+            border: 1px solid #3fb5c1;
+            border-radius: 100px;
+            box-shadow: 0 0 15px black;   
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        li::marker{
+            padding-left: 50px;
+            padding-right: 100px;
+        }
+        .a {
+            text-decoration: none;
+            marker-start: none;
+            list-style: none;
+            border: 3px solid #387288;
+            padding: 10px;
+            font-family: Impact;
+            color: #387288;
+            background-color: #6eced8;
+            border-radius: 13px;
+            
+        }
+        .a:hover{
+            background-color: #387288;
+            color: #6eced8;
+        }
+        .form {
+            position: absolute;
+    left: 10cm;
+    top: 9cm;
+    padding: 48px;
+    background-color: transparent;
+    box-shadow: -1px 1px 191px 20px black;
+    border-radius: 112px;
+        }
+
+        .name {
+            border: 3px solid #3fb5c1;
+    margin: 10px;
+    width: 275px;
+    height: 34px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+        }
+        #img {
+            width: 455px;
+        }
+        .name2 {
+            border: 3px solid #3fb5c1;
+    margin: 10px;
+    width: 275px;
+    height: 125px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+        }
+        .button {
+            background-color: #3fb5c1;
+    width: 90px;
+    height: 40px;
+    font-size: 22px;
+    font-family: Impact;
+    color: #2d454e;
+    margin-top: 20px;
+    margin-left: 280px;
+    border-radius: 12px;
+        }
+        .button:hover {
+            cursor: pointer;
+            background-color: #2d454e;
+            color: #3fb5c1;
+        }
+        .head {
+            font-family: 'Ultra', sans-serif;
+    margin: 45px;
+    font-size: 58px;
+    color: #3eb1bd;
+    font-variant: small-caps;
+    text-shadow: 0 0 5px black;
+    font-stretch: normal;
+    font-family: auto;
+    background-color: #316274;
+    width: 430px;
+    padding: 28px;
+}
+    .head:hover {
+        box-shadow: 12px 2px 120px 20px;
+    }
+       
+    </style>
+        
+    
+    <div class="nav-box">
+        <nav class="nav-bar">
+            <ul class="components">
+                <li><a class="a" href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a class="a" href="/downloads">Downloads</a></li>
+                <li><a class="a" href="/ProgrammingCourses">Programming courses</a></li>
+                <li><a class="a" href="/about">About Me</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+</body>
+</html>
+
+
+    <h1 class="head">|| Create Your  Own Blog </h1>
+
+
+    <form class="form" action="http://127.0.0.1:8000/yourblog/" method="POST">
+        {% csrf_token %}
+    <input type="text" name="name" id="name" class="name" placeholder="Enter your name"><br>
+    <input type="text" name="img" id="img" class="name" placeholder="Enter the url for the image related to the topic(important)"><br>
+    <textarea name="blog" id="blog" cols="30" rows="10" class="name2" placeholder="Enter your content"></textarea><br>
+    <input type="submit" value="Publish" class="button">
+    </form>
+</body>
+</html>

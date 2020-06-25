@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Folk Logs</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/united-states/newyork/newyork_NationalGeographic_2328428.adapt.1900.1.jpg');
+            background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+         }
+         .nav-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #3fb5c1;
+            border: 1px solid #3fb5c1;
+            border-radius: 100px;
+            box-shadow: 0 0 15px black;   
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        li {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        li::marker{
+            padding-left: 50px;
+            padding-right: 100px;
+        }
+        .a {
+            text-decoration: none;
+            marker-start: none;
+            list-style: none;
+            border: 3px solid #387288;
+            padding: 10px;
+            font-family: Impact;
+            color: #387288;
+            background-color: #6eced8;
+            border-radius: 13px;
+            
+        }
+        .a:hover{
+            background-color: #387288;
+            color: #6eced8;
+        }
+    </style>
+
+    {% for eb in ub %}
+        <ol>
+            <li>{{ eb.name }}</li>
+            <li>{{ eb.image_url }}</li>
+            <li>{{ eb.des }}</li>
+            <li>{{ eb.dt }}</li>
+        </ol>
+    {% endfor %}
+
+    
+</body>
+</html>
